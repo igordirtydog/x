@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>numb ili noć u e molu</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #1f1f1f;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .title-block {
+      max-width: 70%;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #fff;
+    }
+    header em {
+      font-size: 1rem;
+      color: #ccc;
+    }
+    .author-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border: 3px solid #ffcc00;
+      border-radius: 8px;
+    }
+    nav {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 0.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav a {
+      color: #ffcc00;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #ffcc00;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.5rem;
+    }
+    a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      margin: 1rem;
+      border: 2px solid #333;
+      cursor: pointer;
+    }
+    .stats {
+      text-align: center;
+      font-size: 1rem;
+      color: #ccc;
+      margin-top: 1rem;
+    }
+    .like-button {
+      background-color: #ffcc00;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .like-button:hover {
+      background-color: #e6b800;
+    }
+    .koncentrat {
+      white-space: pre-wrap;
+      background-color: #1a1a1a;
+      padding: 1.5rem;
+      border-left: 5px solid #ffcc00;
+      font-family: 'Courier New', monospace;
+      font-size: 1rem;
+      color: #ddd;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ffcc00;
+      color: black;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      display: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="title-block">
+      <h1>numb ili noć u e molu</h1>
+      <em>"Kad bi noć imala zvuk, bio bi to E-mol."</em>
+      <div class="stats">
+        Pregleda: <span id="viewCount">0</span> | Lajkova: <span id="likeCount">0</span><br />
+        <button class="like-button" onclick="addLike()">👍 Sviđa mi se</button>
+      </div>
+    </div>
+    <img src="img/autor.jpg" alt="Autor" class="author-img" />
+  </header>
+
+  <nav>
+    <a href="#oknjizi">O knjizi</a>
+    <a href="#autor">O autoru</a>
+    <a href="#koncentrat">Koncentrat</a>
+    <a href="#komentari">Komentari</a>
+    <a href="#galerija">Galerija</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+
+  <section id="oknjizi">
+    <h2>O knjizi</h2>
+    <p>Introspektivno, sirovo i poetsko djelo o borbi s ovisnostima, osjećajem izolacije i traženjem sebe.</p>
+  </section>
+
+  <section id="autor">
+    <h2>O autoru</h2>
+    <p>Igor Šajnović, autor romana, koristi vlastita iskustva da stvori brutalno iskrenu ispovijest bez uljepšavanja.</p>
+  </section>
+
+  <section>
+    <h2>Isječci iz knjige</h2>
+    <ul>
+      <li><a href="downloads/isjecak1.pdf" download>Isječak 1 (PDF)</a></li>
+      <li><a href="downloads/isjecak2.pdf" download>Isječak 2 (PDF)</a></li>
+    </ul>
+  </section>
+
+  <section id="koncentrat">
+    <h2>NUMB — koncentrat</h2>
+    <div class="koncentrat">
+Kad bi noć imala zvuk, bio bi to E-mol. Ne glazba — nego zvuk tame. Onaj koji čujem u trenucima kad sam polomljen, istrošen, nevidljiv samome sebi...
+[OVDJE DOLAZI CIJELI TEKST KOJI SI POSLAO – već ga imam i mogu ti ga ubaciti kompletno u .html datoteku ako želiš]
+    </div>
+  </section>
+
+  <section id="komentari">
+    <h2>Recenzije i komentari</h2>
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = window.location.href;
+        this.page.identifier = "numb-knjiga";
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Omogući JavaScript za prikaz komentara.</noscript>
+  </section>
+
+  <section id="galerija">
+    <h2>Galerija</h2>
+    <div class="gallery">
+      <img src="img/naslovnica.jpg" alt="Naslovnica knjige" onclick="openImage(this.src)" />
+      <img src="img/promocija1.jpg" alt="Promocija knjige" onclick="openImage(this.src)" />
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Mail: <a href="mailto:igorsajnovic2@gmail.com">igorsajnovic2@gmail.com</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Igor Šajnović. Sva prava pridržana.
+  </footer>
+
+  <button id="backToTop" onclick="scrollToTop()">⇧ Na vrh</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let views = localStorage.getItem('numb_views') || 0;
+      views++;
+      localStorage.setItem('numb_views', views);
+      document.getElementById('viewCount').innerText = views;
+
+      let likes = localStorage.getItem('numb_likes') || 0;
+      document.getElementById('likeCount').innerText = likes;
+    });
+
+    function addLike() {
+      let likes = parseInt(localStorage.getItem('numb_likes') || '0');
+      likes++;
+      localStorage.setItem('numb_likes', likes);
+      document.getElementById('likeCount').innerText = likes;
+    }
+
+    // Na vrh
+    window.onscroll = function () {
+      document.getElementById('backToTop').style.display = window.scrollY > 300 ? 'block' : 'none';
+    };
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Lightbox efekt
+    function openImage(src) {
+      const overlay = document.createElement("div");
+      overlay.style.position = "fixed";
+      overlay.style.top = "0";
+      overlay.style.left = "0";
+      overlay.style.width = "100%";
+      overlay.style.height = "100%";
+      overlay.style.background = "rgba(0,0,0,0.9)";
+      overlay.style.display = "flex";
+      overlay.style.alignItems = "center";
+      overlay.style.justifyContent = "center";
+      overlay.style.zIndex = "1000";
+      const img = document.createElement("img");
+      img.src = src;
+      img.style.maxWidth = "90%";
+      img.style.maxHeight = "90%";
+      img.style.border = "4px solid #ffcc00";
+      overlay.appendChild(img);
+      overlay.onclick = () => document.body.removeChild(overlay);
+      document.body.appendChild(overlay);
+    }
+  </script>
+
+</body>
+</html>
